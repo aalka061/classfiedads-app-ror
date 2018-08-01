@@ -1,0 +1,38 @@
+
+
+<%=form_for @ad  do |ad| %>
+<div class="container container-form">
+   <div class="card flex-wrap border border-primary">
+      <div class="card-header border-1">
+         <%= post_type%>
+      </div>
+      
+      <div class="form-group">
+         <%= ad.label :title, "Title:", class: "col-md-12 control-label" %>
+         <div class="col-md-12">
+            <%= ad.text_field :title, class: "form-control" %>
+         </div>
+      </div>
+      <div class="form-group">
+         <%= ad.label :description, "Description", class: "col-md-12 control-label" %>
+         <div class="col-md-12">
+            <%= ad.text_area :description, class: "form-control" %>
+         </div>
+      </div>
+      <div class="form-group">
+         <%= ad.label :location, "Location:", class: "col-md-12 control-label" %>
+         <div class="col-md-12">
+            <%= ad.text_field :location, class: "form-control" %>
+         </div>
+      </div>
+      <div class="form-group">
+         <%= ad.label :price, "Price:", class: "col-md-12 control-label" %>
+         <div class="col-md-12">
+            <%= ad.text_field :price, class: "form-control" %>
+         </div>
+      </div>
+      <%= ad.submit "Post", class: "btn btn-default btn-primary" %>  
+   </div>
+</div>
+<%end%>
+

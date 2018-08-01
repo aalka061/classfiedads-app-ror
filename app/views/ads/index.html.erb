@@ -14,11 +14,24 @@
                         <div class="card-block px-2">
                             <h4 class="card-title"> <%=ad.title%></h4>
                             <p class="card-text"><%=ad.description%></p>
+                            <div class="delete-button">
+                              <%=link_to "Delete", ad_path(ad), method: :delete, :class=>"btn btn-primary", 
+                                                                                :data => {:confirm => "You Sure?"}%>
+                            <%=link_to "Edit", edit_ad_path(ad), :class => "btn btn-primary"%>
+                                                                    
+                            </div>
+                           
+
                         </div>
                         <div class="w-100"></div>
                         <div class="card-footer w-100 text-muted">
-                            tags about the ad
+                               Price: $<%=ad.price%> |
+                           Location:  <%=ad.location%>
+                           
+                        
+
                         </div>
+
                     </div>
                 </div>
             </a>
