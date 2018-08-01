@@ -1,0 +1,30 @@
+<div class="container list-container">
+
+
+       
+    </div>
+    <br>
+    <%@ads.each do |ad|%>
+            <a href="#" class="card-block clearfix">
+                <div class="container">
+                    <div class="card flex-row flex-wrap">
+                        <div class="card-header border-0">
+                            <img src="//placehold.it/200" alt="">
+                        </div>
+                        <div class="card-block px-2">
+                            <h4 class="card-title"> <%=ad.title%></h4>
+                            <p class="card-text"><%=ad.description%></p>
+                        </div>
+                        <div class="w-100"></div>
+                        <div class="card-footer w-100 text-muted">
+                            tags about the ad
+                        </div>
+                    </div>
+                </div>
+            </a>
+            
+
+
+    <%end%>
+
+</div>
