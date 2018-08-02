@@ -30,6 +30,28 @@
 
 <div class="jumbotron">
   <div class="container">
+    <%=form_tag(ads_path, method: :get, role: 'form') do%> 
+            <div class="input-group">
+                <div class="input-group-prepend">
+                  <%=text_field_tag :search_term, nil, placeholder: 'Search for anything', class: 'form-control'%>
+                </div>
+                   <div class="form-group">
+                    <select class="form-control custom-select">
+                      <option selected>All ads</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                   </select>
+                  </div>
+
+                <div class="form-group">
+                  <%=submit_tag "Search", class: "input-group-text purple lighten-3"%>
+
+                </div>
+
+            </div>
+    <%end%>
+    <!-- 
     <div class="input-group">
         <input class="form-control" type="text" placeholder="Search for anything" aria-label="Search">
           <select class="form-control custom-select">
@@ -39,9 +61,11 @@
               <option value="3">Three</option>
         </select>
           <div class="input-group-prepend">
+            
             <span class="input-group-text purple lighten-3" id="basic-text1"><i class="fa fa-search text-black" aria-hidden="true"></i></span>
         </div>
 </div>
+-->
 
   </div>
 </div>

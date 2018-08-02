@@ -1,7 +1,15 @@
 class AdsController < ApplicationController
 
     def index
-        @ads = Ad.all
+    
+        if params[:search_term]
+            logger.info("Hi"+params[:search_term])
+            @ads = Ad.where('title LIKE ?', '%'+ params[:search_term]+'%')
+        else
+             @ads = Ad.all
+        end
+        
+        
     end
     def new 
         @ad = Ad.new
