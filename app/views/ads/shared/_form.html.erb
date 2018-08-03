@@ -6,7 +6,6 @@
       <div class="card-header border-1">
          <%= post_type%>
       </div>
-      
       <div class="form-group">
          <%= ad.label :title, "Title:", class: "col-md-12 control-label" %>
          <div class="col-md-12">
@@ -31,7 +30,26 @@
             <%= ad.text_field :price, class: "form-control" %>
          </div>
       </div>
+      <div >
+         <%= ad.label :image, "image:", class: "col-md-12"%>
+            <%= ad.file_field :image %>
+      </div>
       <%= ad.submit "Post", class: "btn btn-default btn-primary" %>  
+   </div>
+</div>
+<br>
+<div class="container">
+   <div class="card flex-row flex-wrap">
+      <div class="card-header border-0">Media</div>
+      <div class="card-block px-10" style="width: 50rem">
+         <div class="row">
+            <div class="col-md-4">
+               <div class="thumbnail">
+                
+               </div>
+            </div>
+         </div>
+      </div>
    </div>
 </div>
 <%end%>

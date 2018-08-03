@@ -8,10 +8,14 @@
             <a href="#" class="card-block clearfix">
                 <div class="container">
                     <div class="card flex-row flex-wrap">
-                        <div class="card-header border-0">
-                            <img src="//placehold.it/200" alt="">
+                        <div class="card-header card-center border-0">
+                            <% if ad.image.attached?%>
+                                 <%=image_tag(ad.image, size: "200x200")%>
+                            <%else%>
+                                <%=image_tag("//placehold.it/200")%>
+                            <%end%>
                         </div>
-                        <div class="card-block px-10" style="width: 50rem">
+                        <div class="card-body" style="width: 50rem">
                             <div class="row">
                                 <div class="col-md-10">
                                       <h4 class="card-title"> <%=ad.title%></h4>
@@ -34,7 +38,6 @@
                            
 
                         </div>
-                        <div class="w-100"></div>
                         <div class="card-footer w-100 text-muted">
                           
                            
