@@ -9,8 +9,8 @@
                 <div class="container">
                     <div class="card flex-row flex-wrap">
                         <div class="card-header card-center border-0">
-                            <% if ad.image.attached?%>
-                                 <%=image_tag(ad.image, size: "200x200")%>
+                            <% if ad.images.attached?%>
+                                 <%=image_tag(ad.images.first, size: "200x200")%>
                             <%else%>
                                 <%=image_tag("//placehold.it/200")%>
                             <%end%>
@@ -23,8 +23,6 @@
                                  <div class="col-md-2">
                                       <h4 class="card-text text-warning"> $<%=ad.price%></h4>
                                 </div>
-                               
-
                             </div>
                             <p class="text-info mata-ad-info">  <%=ad.location%> | <%=ad.created_at.strftime("%Y-%m-%d")%></p>
                             

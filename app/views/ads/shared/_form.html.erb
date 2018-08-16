@@ -32,25 +32,33 @@
       </div>
       <div >
          <%= ad.label :image, "image:", class: "col-md-12"%>
-            <%= ad.file_field :image %>
+            <%= ad.file_field :images, multiple: true %>
       </div>
       <%= ad.submit "Post", class: "btn btn-default btn-primary" %>  
    </div>
 </div>
+<%end%>
 <br>
+<%if @ad.images.attached?%>
+
 <div class="container">
    <div class="card flex-row flex-wrap">
       <div class="card-header border-0">Media</div>
-      <div class="card-block px-10" style="width: 50rem">
+      <div class="card-block px-10" style="width: 40rem">
          <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-2">
+                        <%@ad.images.each do |image|%>
+
                <div class="thumbnail">
-                
+                 <a href="/rails/active/storage/direct_uploads" ><%=image_tag(image, size: "100x100")%></a>
                </div>
+               <%end%>
             </div>
          </div>
       </div>
    </div>
 </div>
+
 <%end%>
+
 
